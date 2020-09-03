@@ -15,10 +15,11 @@ class Currency_convertor:
         amount = round(amount * self.rates[to_currency], 2) 
         print('{} {} = {} {}'.format(initial_amount, from_currency, amount, to_currency)) 
 
-if __name__ == "__main__": 
-    url = str.__add__('http://data.fixer.io/api/latest?access_key=fa2382d8f42c76563e49c13742e1613e')   
+if __name__ == "__main__":
+    key='fa2382d8f42c76563e49c13742e1613e'
+    url = str.__add__('http://data.fixer.io/api/latest?access_key=',key)   
     c = Currency_convertor(url) 
     dari_negara = input("Dari mata uang?(cth:usd): ").upper()
     ke_negara= input("Ke mata uang?(cth:idr): ").upper()
-    amount = int(input("Amount: ")) 
-    c.convert(from_country, to_country, amount)
+    amount = int(input("Jumlah: ")) 
+    c.convert(dari_negara, ke_negara, amount)
